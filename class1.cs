@@ -14,11 +14,14 @@ public class Stringanswer : Quiz
 
 class NumericQuestion : Quiz
 {
+    
     public int number {set; get;}
     public NumericQuestion(int number, string thequerytext): base(thequerytext)
     {
         this.number = number;
     }
+
+    
 
 }
 
