@@ -10,12 +10,21 @@
         static public List<Quiz> myquiz = new List<Quiz>();
         static public void queryfill()
         {
-             Stringanswer m2 = new Stringanswer("London", "State the capital of United Kingdom");
+            /* Stringanswer m2 = new Stringanswer("London", "State the capital of United Kingdom");
              myquiz.Add(m2);
              NumericQuestion m3 = new NumericQuestion(7, "How many stars are there in Ursus Major?");
              myquiz.Add(m3);
              ThreeChoises m4 = new ThreeChoises("2","IFK Gothenburg played against Sirius, who won? (1: IFK, X: equal, 2 Sirius)");
              myquiz.Add(m4);
+            // Add a numeric Question 
+            Quiz my = new object(); */
+            
+            myquiz.Add(NumericQuestion.CreateQuesttion());
+            myquiz.Add(TrueOrFalseQuestion.CreateQuesttion());
+            myquiz.Add(YearQuestion.CreateQuesttion());
+            myquiz.Add((Stringanswer)Stringanswer.CreateQuesttion());
+
+
         }
 
 
@@ -41,9 +50,13 @@
                 {
                     child3.DoSomething(child3.Pick);
                 }
-                else
+                else if (item is TrueOrFalseQuestion child4)
                 {
-                    // handle exeption
+                    child4.DoSomething(child4.IsTrue);
+                }
+                else if (item is YearQuestion child5)
+                {
+                    child5.DoSomething(child5.year);
                 }
 
             }

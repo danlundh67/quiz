@@ -7,6 +7,16 @@ public class Quiz
         this.Thequerytext = thequerytext;
     }
 
+    static public Quiz CreateQuesttion()
+    {
+        Console.WriteLine("State the (string) question:");
+        string text=Console.ReadLine();
+        Console.WriteLine("State the correct ansver:");
+        string correct = Console.ReadLine();
+        Stringanswer st = new(correct,text);
+        return st;
+    }
+
     public void DoSomething(string correct)
     {
         Console.WriteLine(Thequerytext);
@@ -25,6 +35,21 @@ public class Quiz
          Console.WriteLine(Thequerytext);
         string answer=Console.ReadLine();
         int.TryParse(answer,out int result);
+
+        if (result == correct)
+        {
+            Console.WriteLine("Correct answer");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect answer");
+        }
+    }
+    public void DoSomething(bool correct)
+    {
+         Console.WriteLine(Thequerytext);
+        string answer=Console.ReadLine();
+        bool.TryParse(answer.ToLower(), out bool result);
 
         if (result == correct)
         {
