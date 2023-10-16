@@ -5,7 +5,7 @@ public class Stringanswer : Quiz
     public string correct {set; get;}
     public string thequerytext;
 
-    public Stringanswer(string correct, string thequerytext) : base(thequerytext) //add points
+    public Stringanswer(string correct, string thequerytext, int points) : base(thequerytext, points) //add points
     {
         this.correct =correct;
     }
@@ -20,20 +20,12 @@ class NumericQuestion : Quiz
 {
     
     public int number {set; get;}
-    public NumericQuestion(int number, string thequerytext): base(thequerytext)
+    public NumericQuestion(int number, string thequerytext, int points): base(thequerytext, points)
     {
         this.number = number;
     }
 
-    static public new NumericQuestion CreateQuestion()
-    {
-        Console.WriteLine("State the (numerical) question:");
-        string text= "[Number] " + Console.ReadLine();
-        Console.WriteLine("State the correct ansver:");
-        int.TryParse(Console.ReadLine(), out int  correct);
-        NumericQuestion st = new(correct,text);
-        return st;
-    }
+    
     
 
 }
@@ -41,19 +33,11 @@ class NumericQuestion : Quiz
 class ThreeChoises : Quiz
 {
     public string Pick {get; set;}
-    public ThreeChoises(string Pick, string thequerytext): base(thequerytext)
+    public ThreeChoises(string Pick, string thequerytext, int points): base(thequerytext , points)
     {
         this.Pick = Pick;
     }
 
-    static public new  ThreeChoises CreateQuestion()
-    {
-        Console.WriteLine("State the (numerical) question:");
-        string text="[1X2] " + Console.ReadLine();
-        Console.WriteLine("State the correct ansver:");
-        string correct=Console.ReadLine();
-        ThreeChoises st = new(correct,text);
-        return st;
-    }
+    
 
 }

@@ -2,29 +2,22 @@ public class Quiz
 {
 
     public string Thequerytext {get; set;}
-
-    // points egenskap (även i underklass)
+    public int Points {get; set;}
+    
    
-    public Quiz(string thequerytext)
+    public Quiz(string thequerytext, int points)
     {
         this.Thequerytext = thequerytext;
+        this.Points = points;
     }
 
     public virtual void CorrectAnswer()
     {
         System.Console.WriteLine(Thequerytext);
         System.Console.WriteLine("What is your answer");
-        
+
     }
-    static public Quiz CreateQuestion() // i underklasser
-    {
-        Console.WriteLine("State the (string) question:");
-        string text=Console.ReadLine();
-        Console.WriteLine("State the correct ansver:");
-        string correct = Console.ReadLine();
-        Stringanswer st = new(correct,text);
-        return st;
-    }
+    
 
     public void DoSomething(string correct)
     {
@@ -39,21 +32,7 @@ public class Quiz
             Console.WriteLine("Incorrect answer");
         }
     }
-    public void DoSomething(int correct)
-    {
-         Console.WriteLine(Thequerytext);
-        string answer=Console.ReadLine();
-        int.TryParse(answer,out int result);
-
-        if (result == correct)
-        {
-            Console.WriteLine("Correct answer");
-        }
-        else
-        {
-            Console.WriteLine("Incorrect answer");
-        }
-    }
+    
     public void DoSomething(bool correct)
     {
          Console.WriteLine(Thequerytext);

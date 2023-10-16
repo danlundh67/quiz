@@ -9,27 +9,55 @@
 
         static public List<Quiz> myquiz = new List<Quiz>();
         static public void queryfill()
-        {
+        {   bool flag = true;
+            while (flag)
+            {
+                System.Console.WriteLine("--------------------------------");
+                System.Console.WriteLine("| [1] Add year question        |");
+                System.Console.WriteLine("| [2] Ta bort en artikel       |");
+                System.Console.WriteLine("| [3] quit                     |");
+                System.Console.WriteLine("--------------------------------");
+                System.Console.Write("Val: ");
+                int menu = int.Parse("" + Console.ReadLine());
 
+                switch (menu)
+                {
+                    case 1:
+                       System.Console.WriteLine("State the year question!");
+                       string yeartext = "" + Console.ReadLine();
+                       System.Console.WriteLine("What is the correct asnwer?");
+                       int.TryParse(Console.ReadLine(),out int years);
+                       System.Console.WriteLine("How many points is the question worth?");
+                       int.TryParse(Console.ReadLine(),out int points);
+                       YearQuestion yearQuestion = new YearQuestion(years, yeartext, points); 
+                       myquiz.Add(yearQuestion);
+                       System.Console.WriteLine("Year question added!");
+
+                       break;
+                    case 2:
+                      
+                        break;
+                    case 3:
+                        flag = false;
+                        break;
+                    case 4:
+                       
+                        break;
+                    case 5:
+                        
+                    
+                    default:
+                        break;
+                }
             // välja frågetyp
                 // läs in frågetext 
                 // läs in poängen
                 // läs in rätt svar
                 // skapa objekt av frågetypen 
 
-            /* Stringanswer m2 = new Stringanswer("London", "State the capital of United Kingdom");
-             myquiz.Add(m2);
-             NumericQuestion m3 = new NumericQuestion(7, "How many stars are there in Ursus Major?");
-             myquiz.Add(m3);
-             ThreeChoises m4 = new ThreeChoises("2","IFK Gothenburg played against Sirius, who won? (1: IFK, X: equal, 2 Sirius)");
-             myquiz.Add(m4);
-            // Add a numeric Question 
-            Quiz my = new object(); */
             
-            myquiz.Add(NumericQuestion.CreateQuestion());
-            myquiz.Add(TrueOrFalseQuestion.CreateQuestion());
-            myquiz.Add(YearQuestion.CreateQuestion());
-            myquiz.Add((Stringanswer)Stringanswer.CreateQuestion());
+            }
+            
 
 
         }
@@ -38,10 +66,12 @@
 
         static void Main(string[] args)
         {
-            //Quiz m1 = new Quiz("What is the capital of United Kingdom?");
+            
 
             queryfill();
 
+           
+               
            foreach(Quiz item in myquiz)
             {
                 
@@ -51,7 +81,7 @@
                 }
                 else if(item is NumericQuestion child2)
                 {
-                    child2.DoSomething(child2.number);
+                    //child2.DoSomething(child2.number);
                 }
                 else if (item is ThreeChoises child3)
                 {
@@ -63,12 +93,17 @@
                 }
                 else if (item is YearQuestion child5)
                 {
-                    child5.DoSomething(child5.year);
+                    System.Console.WriteLine(child5.Thequerytext);
+                    //child5.DoSomething(child5.year);
+                    child5.CorrectAnswer();
                 }
+                
 
             }
 
-            // Stringanswer m11 = new Stringanswer
+            
+
+            
         }
     }
 }
