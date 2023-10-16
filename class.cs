@@ -10,6 +10,12 @@ public class Quiz
         this.Thequerytext = thequerytext;
     }
 
+    public virtual void CorrectAnswer()
+    {
+        System.Console.WriteLine(Thequerytext);
+        System.Console.WriteLine("What is your answer");
+        
+    }
     static public Quiz CreateQuestion() // i underklasser
     {
         Console.WriteLine("State the (string) question:");

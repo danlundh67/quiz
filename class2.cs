@@ -7,7 +7,7 @@ public class YearQuestion : Quiz
         this.year = year;
     }
 
-    static public new YearQuestion CreateQuestion()
+    /*static public new YearQuestion CreateQuestion()
     {
         Console.WriteLine("State the (year) question:");
         string text= "[Year] " + Console.ReadLine();
@@ -15,6 +15,21 @@ public class YearQuestion : Quiz
         int.TryParse(Console.ReadLine(), out int  correct);
         YearQuestion st = new(correct,text);
         return st;
+    }*/
+    public override void CorrectAnswer()
+    {
+        System.Console.WriteLine(Thequerytext);
+        System.Console.WriteLine("What is your answer");
+        int.TryParse(Console.ReadLine(),out int answer);
+        if (answer == year)
+        {
+            Console.WriteLine("Correct answer");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect answer");
+        }
+        
     }
 
 }
