@@ -10,7 +10,7 @@ public class Quiz
         this.Thequerytext = thequerytext;
     }
 
-    static public Quiz CreateQuesttion() // i underklasser
+    static public Quiz CreateQuestion() // i underklasser
     {
         Console.WriteLine("State the (string) question:");
         string text=Console.ReadLine();

@@ -26,10 +26,10 @@
             // Add a numeric Question 
             Quiz my = new object(); */
             
-            myquiz.Add(NumericQuestion.CreateQuesttion());
-            myquiz.Add(TrueOrFalseQuestion.CreateQuesttion());
-            myquiz.Add(YearQuestion.CreateQuesttion());
-            myquiz.Add((Stringanswer)Stringanswer.CreateQuesttion());
+            myquiz.Add(NumericQuestion.CreateQuestion());
+            myquiz.Add(TrueOrFalseQuestion.CreateQuestion());
+            myquiz.Add(YearQuestion.CreateQuestion());
+            myquiz.Add((Stringanswer)Stringanswer.CreateQuestion());
 
 
         }
