@@ -2,12 +2,15 @@ public class Quiz
 {
 
     public string Thequerytext {get; set;}
+
+    // points egenskap (även i underklass)
+   
     public Quiz(string thequerytext)
     {
         this.Thequerytext = thequerytext;
     }
 
-    static public Quiz CreateQuesttion()
+    static public Quiz CreateQuesttion() // i underklasser
     {
         Console.WriteLine("State the (string) question:");
         string text=Console.ReadLine();

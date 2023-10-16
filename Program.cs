@@ -10,6 +10,13 @@
         static public List<Quiz> myquiz = new List<Quiz>();
         static public void queryfill()
         {
+
+            // välja frågetyp
+                // läs in frågetext 
+                // läs in poängen
+                // läs in rätt svar
+                // skapa objekt av frågetypen 
+
             /* Stringanswer m2 = new Stringanswer("London", "State the capital of United Kingdom");
              myquiz.Add(m2);
              NumericQuestion m3 = new NumericQuestion(7, "How many stars are there in Ursus Major?");

@@ -5,10 +5,12 @@ public class Stringanswer : Quiz
     public string correct {set; get;}
     public string thequerytext;
 
-    public Stringanswer(string correct, string thequerytext) : base(thequerytext)
+    public Stringanswer(string correct, string thequerytext) : base(thequerytext) //add points
     {
         this.correct =correct;
     }
+
+    // rätta frågan (jfr progam.cs DoSomething), sätta points
     
 }
 
