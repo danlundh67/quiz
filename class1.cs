@@ -14,8 +14,9 @@ public class Stringanswer : Quiz
 
     public override void CorrectAnswer()
     {
-        System.Console.WriteLine(Thequerytext);
-        System.Console.WriteLine("What is your answer");
+        //System.Console.WriteLine(Thequerytext);
+        //System.Console.WriteLine("What is your answer");
+        base.CorrectAnswer();
         string answer = "" + Console.ReadLine();
         if (answer == correct)
         {
