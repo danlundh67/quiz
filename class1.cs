@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Formats.Asn1;
 
 public class Stringanswer : Quiz
 {
@@ -10,7 +11,23 @@ public class Stringanswer : Quiz
         this.correct =correct;
     }
 
-    // rätta frågan (jfr progam.cs DoSomething), sätta points
+
+    public override void CorrectAnswer()
+    {
+        System.Console.WriteLine(Thequerytext);
+        System.Console.WriteLine("What is your answer");
+        string answer = "" + Console.ReadLine();
+        if (answer == correct)
+        {
+            Console.WriteLine("Correct answer");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect answer");
+            Points = 0;
+        }
+        
+    }
     
 }
 
@@ -25,7 +42,23 @@ class NumericQuestion : Quiz
         this.number = number;
     }
 
-    
+    public override void CorrectAnswer()
+    {
+        // System.Console.WriteLine(Thequerytext);
+        // System.Console.WriteLine("What is your answer");
+        base.CorrectAnswer();
+        int.TryParse(Console.ReadLine(),out int answer);
+        if (answer == number)
+        {
+            Console.WriteLine("Correct answer");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect answer");
+            Points = 0;
+        }
+        
+    }
     
 
 }
@@ -38,6 +71,21 @@ class ThreeChoises : Quiz
         this.Pick = Pick;
     }
 
-    
+    public override void CorrectAnswer()
+    {
+        System.Console.WriteLine(Thequerytext);
+        System.Console.WriteLine("What is your answer [1X2]:?");
+        string answer=Console.ReadLine() + "";
+        if (answer == Pick)
+        {
+            Console.WriteLine("Correct answer");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect answer");
+            Points = 0;
+        }
+        
+    }
 
 }

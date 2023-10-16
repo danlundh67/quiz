@@ -14,7 +14,11 @@
             {
                 System.Console.WriteLine("--------------------------------");
                 System.Console.WriteLine("| [1] Add year question        |");
-                System.Console.WriteLine("| [2] Ta bort en artikel       |");
+                System.Console.WriteLine("| [2] Add text questtion       |");
+                System.Console.WriteLine("| [3] Add numeric question     |");
+                System.Console.WriteLine("| [5] Add Trye/False question  |");
+                System.Console.WriteLine("| [6] Add 1X2 question         |");
+ 
                 System.Console.WriteLine("| [9] quit                     |");
                 System.Console.WriteLine("--------------------------------");
                 System.Console.Write("Val: ");
@@ -36,15 +40,42 @@
                        break;
                     case 2:
                         // string Q
+                        System.Console.WriteLine("State the text (string) question!");
+                        string text = "" + Console.ReadLine();
+                        System.Console.WriteLine("What is the correct asnwer?");
+                        string answer = Console.ReadLine() +"";
+                        System.Console.WriteLine("How many points is the question worth?");
+                        int.TryParse(Console.ReadLine(), out int points2);
+                        Stringanswer stringQuestion = new Stringanswer(answer, text, points2); 
+                        myquiz.Add(stringQuestion);
+                        System.Console.WriteLine("Text question added!");
                         break;
                     case 3:
                         // Numeric Q
+                        System.Console.WriteLine("State the year question!");
+                        text = "" + Console.ReadLine();
+                        System.Console.WriteLine("What is the correct asnwer?");
+                        int.TryParse(Console.ReadLine(),out int number);
+                        System.Console.WriteLine("How many points is the question worth?");
+                        int.TryParse(Console.ReadLine(),out int points3);
+                        NumericQuestion numericQuestion = new NumericQuestion(years, yeartext, points3); 
+                        myquiz.Add(numericQuestion);
+                        System.Console.WriteLine("Numeric question added!");
                         break;
                     case 4:
                         // Bool
                         break;
                     case 5:
                         // 1X2 Q
+                        System.Console.WriteLine("State the [1X2] question!");
+                        text = "" + Console.ReadLine();
+                        System.Console.WriteLine("What is the correct asnwer?");
+                        answer = Console.ReadLine() +"";
+                        System.Console.WriteLine("How many points is the question worth?");
+                        int.TryParse(Console.ReadLine(), out int points5);
+                        ThreeChoises threeChoise = new ThreeChoises(answer, text, points5); 
+                        myquiz.Add(threeChoise);
+                        System.Console.WriteLine("1X2 question added!");
                         break;
                     case 6:
                         // Multiple Q
@@ -88,28 +119,8 @@
            foreach(Quiz item in myquiz)
             {
                 
-                if(item is Stringanswer child1)
-                {
-                    child1.DoSomething(child1.correct);
-                }
-                else if(item is NumericQuestion child2)
-                {
-                    //child2.DoSomething(child2.number);
-                }
-                else if (item is ThreeChoises child3)
-                {
-                    child3.DoSomething(child3.Pick);
-                }
-                else if (item is TrueOrFalseQuestion child4)
-                {
-                    child4.DoSomething(child4.IsTrue);
-                }
-                else if (item is YearQuestion child5)
-                {
-                    System.Console.WriteLine(child5.Thequerytext);
-                    //child5.DoSomething(child5.year);
-                    child5.CorrectAnswer();
-                }
+                item.CorrectAnswer();
+               
                 
 
             }
