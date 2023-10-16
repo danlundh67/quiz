@@ -15,7 +15,7 @@
                 System.Console.WriteLine("--------------------------------");
                 System.Console.WriteLine("| [1] Add year question        |");
                 System.Console.WriteLine("| [2] Ta bort en artikel       |");
-                System.Console.WriteLine("| [3] quit                     |");
+                System.Console.WriteLine("| [9] quit                     |");
                 System.Console.WriteLine("--------------------------------");
                 System.Console.Write("Val: ");
                 int menu = int.Parse("" + Console.ReadLine());
@@ -35,16 +35,29 @@
 
                        break;
                     case 2:
-                      
+                        // string Q
                         break;
                     case 3:
-                        flag = false;
+                        // Numeric Q
                         break;
                     case 4:
-                       
+                        // Bool
                         break;
                     case 5:
-                        
+                        // 1X2 Q
+                        break;
+                    case 6:
+                        // Multiple Q
+                        break;
+                    case 7:
+                       
+                    break;
+                    case 8:
+                       
+                        break;
+                    case 9:   
+                        flag = false;
+                        break;
                     
                     default:
                         break;
