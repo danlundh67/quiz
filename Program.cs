@@ -1,4 +1,6 @@
-﻿namespace quizzen
+﻿using System.Diagnostics.Contracts;
+
+namespace quizzen
 {
 
 
@@ -162,6 +164,8 @@
         {
             string adminpass = "Admin123";
             bool isRunning = true;
+            int availiblepoints = 0;
+            int obtainedscore =0;
             while (isRunning)
             {
             System.Console.WriteLine("< [1] Admin menu >");
@@ -178,6 +182,7 @@
                     if(password == adminpass)
                     {
                         queryfill();
+                        availiblepoints += Printing.GetScore(myquiz);
                     }
                     break;
                     
@@ -194,9 +199,11 @@
                         var random = new Random();
                         int index = random.Next(myquiz.Count);
                         myquiz[index].CorrectAnswer();
+                        obtainedscore += myquiz[index].Points;
                         myquiz.RemoveAt(index);
                         }
                         System.Console.WriteLine("There are no more questions to answer!");
+                        Console.WriteLine($"Obtained pointes {obtainedscore} out of {availiblepoints} points.");
                         
                     }
                     break;
