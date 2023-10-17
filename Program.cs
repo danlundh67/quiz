@@ -64,6 +64,15 @@
                         break;
                     case 4:
                         // Bool
+                        System.Console.WriteLine("State the true or false question!");
+                        string booltext = "" + Console.ReadLine();
+                        System.Console.WriteLine("What is the correct asnwer, true or false?");
+                        string boolanswer = Console.ReadLine() +"";
+                        System.Console.WriteLine("How many points is the question worth?");
+                        int.TryParse(Console.ReadLine(), out int points4);
+                        Stringanswer boolQuestion = new Stringanswer(boolanswer, booltext, points4); 
+                        myquiz.Add(boolQuestion);
+                        System.Console.WriteLine("true or false question added!");
                         break;
                     case 5:
                         // 1X2 Q
