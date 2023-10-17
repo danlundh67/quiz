@@ -49,10 +49,12 @@ public override void CorrectAnswer()
             if (answer == IsTrue)
             {
                 Console.WriteLine("Correct answer");
+                System.Console.WriteLine("----------------");
             }
             else
             {
                 Console.WriteLine("Incorrect answer");
+                System.Console.WriteLine("----------------");
                 Points = 0;
             }
         }else
@@ -94,10 +96,12 @@ public class MultipleChoises : Quiz
             if (answer == Correctchoice)
             {
                 Console.WriteLine("Correct answer");
+                System.Console.WriteLine("----------------");
             }
             else
             {
                 Console.WriteLine("Incorrect answer");
+                System.Console.WriteLine("----------------");
                 Points = 0;
             }
         }

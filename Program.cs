@@ -141,7 +141,7 @@
                     case 9:   
                         System.Console.WriteLine("Exiting admin menu!");
                         flag = false;
-                        break;
+                        return;
                     
                     default:
                         System.Console.WriteLine("Please enter a valid option!");
@@ -182,8 +182,19 @@
                     break;
                     
                 case 2:
-
+                    if (myquiz.Count == 0)
+                    {
+                        System.Console.WriteLine("No questions available to play. Please add questions in the admin menu.");
+                    }
+                    else
+                    {
+                    System.Console.WriteLine("Hello and welcome to the quiz game!");
+                    var random = new Random();
+                    int index = random.Next(myquiz.Count);
+                    myquiz[index].CorrectAnswer();
+                    }
                     break;
+                    
 
                 case 9:
                     System.Console.WriteLine("Have a nice day!");
@@ -191,21 +202,21 @@
                     break;
             }
 
-            int totalscore;
+            //int totalscore;
 
-            queryfill();
-            totalscore = Printing.GetScore(myquiz);
+            //queryfill();
+            //totalscore = Printing.GetScore(myquiz);
 
            
                
-           foreach(Quiz item in myquiz)
+           /*foreach(Quiz item in myquiz)
             { 
                 item.CorrectAnswer();
             }
 
             int obtainedscore = Printing.GetScore(myquiz);
 
-            Console.WriteLine($"Obtained pointes {obtainedscore} out of {totalscore} points.");
+            Console.WriteLine($"Obtained pointes {obtainedscore} out of {totalscore} points.");*/
 
 
             

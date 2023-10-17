@@ -35,6 +35,7 @@ public class Quiz
         else
         {
             Console.WriteLine("Incorrect answer");
+            System.Console.WriteLine("----------------");
         }
     }
     
@@ -47,10 +48,12 @@ public class Quiz
         if (result == correct)
         {
             Console.WriteLine("Correct answer");
+            System.Console.WriteLine("----------------");
         }
         else
         {
             Console.WriteLine("Incorrect answer");
+            System.Console.WriteLine("----------------");
         }
     }
 }

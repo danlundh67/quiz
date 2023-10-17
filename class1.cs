@@ -55,10 +55,12 @@ class NumericQuestion : Quiz
         if (answer == number)
         {
             Console.WriteLine("Correct answer");
+            System.Console.WriteLine("----------------");
         }
         else
         {
             Console.WriteLine("Incorrect answer");
+            System.Console.WriteLine("----------------");
             Points = 0;
         }
         
@@ -89,10 +91,12 @@ class ThreeChoises : Quiz
         if (answer == Pick)
         {
             Console.WriteLine("Correct answer");
+            System.Console.WriteLine("----------------");
         }
         else
         {
             Console.WriteLine("Incorrect answer");
+            System.Console.WriteLine("----------------");
             Points = 0;
         }
         
