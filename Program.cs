@@ -154,7 +154,7 @@
 
             int obtainedscore = Printing.GetScore(myquiz);
 
-            Console.WriteLine($"Obtained pointes {obtainedscore} out of {totalscore} points.")
+            Console.WriteLine($"Obtained pointes {obtainedscore} out of {totalscore} points.");
 
 
             

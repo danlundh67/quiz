@@ -25,6 +25,12 @@ public class YearQuestion : Quiz
         
     }
 
+    public override string GetAnswer()
+    {
+        string b = "" + year;
+        return b;
+    }
+
 }
 class TrueOrFalseQuestion : Quiz
 {
