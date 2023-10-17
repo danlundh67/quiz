@@ -160,6 +160,37 @@
 
         static void Main(string[] args)
         {
+            string adminpass = "Admin123";
+            bool isRunning = true;
+            while (isRunning)
+            {
+            System.Console.WriteLine("<[1] Admin menu>");
+            System.Console.WriteLine("<[2] Play quiz> ");
+            System.Console.WriteLine("<[9] Quit>      ");
+            System.Console.Write("Choice: ");
+            int choice = int.Parse("" + Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    System.Console.WriteLine("Enter admin password");
+                    string password = "" + Console.ReadLine();
+                    if(password == adminpass)
+                    {
+                        queryfill();
+                    }
+                    break;
+                    
+                case 2:
+
+                    break;
+
+                case 3:
+                    System.Console.WriteLine("Have a nice day!");
+                    isRunning = false;
+                    break;
+            }
+
             int totalscore;
 
             queryfill();
@@ -180,4 +211,4 @@
             
         }
     }
-}
+}}
