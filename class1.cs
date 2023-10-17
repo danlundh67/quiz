@@ -29,6 +29,11 @@ public class Stringanswer : Quiz
         }
         
     }
+
+    public override string GetAnswer()
+    {
+        return correct;
+    }
     
 }
 
@@ -60,6 +65,12 @@ class NumericQuestion : Quiz
         }
         
     }
+
+    public override string GetAnswer()
+    {
+        string b = "" + number;
+        return b;
+    }
     
 
 }
@@ -87,6 +98,12 @@ class ThreeChoises : Quiz
             Points = 0;
         }
         
+    }
+
+    public override string GetAnswer()
+    {
+        string b = "" + Pick;
+        return b;
     }
 
 }

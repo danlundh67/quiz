@@ -140,22 +140,22 @@
 
         static void Main(string[] args)
         {
-            
+            int totalscore;
 
             queryfill();
+            totalscore = Printing.GetScore(myquiz);
 
            
                
            foreach(Quiz item in myquiz)
-            {
-                
+            { 
                 item.CorrectAnswer();
-               
-                
-
             }
 
-            
+            int obtainedscore = Printing.GetScore(myquiz);
+
+            Console.WriteLine($"Obtained pointes {obtainedscore} out of {totalscore} points.")
+
 
             
         }

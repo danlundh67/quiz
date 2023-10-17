@@ -56,6 +56,13 @@ public override void CorrectAnswer()
         }
         
     }
+
+    public override string GetAnswer()
+    {
+        string b;
+        if (IsTrue == false) {b="False";} else {b="True";}
+        return b;
+    }
 }
 public class MultipleChoises : Quiz
 {
@@ -94,6 +101,12 @@ public class MultipleChoises : Quiz
             Points = 0;
         }
         
+    }
+
+    public override string GetAnswer()
+    {
+        
+        return Correctchoice;
     }
 
 }

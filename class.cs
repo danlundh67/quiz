@@ -17,6 +17,11 @@ public class Quiz
         System.Console.WriteLine("What is your answer");
 
     }
+
+    public virtual string GetAnswer()
+    {
+        return "";
+    }
     
 
     public void DoSomething(string correct)
