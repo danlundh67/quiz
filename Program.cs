@@ -188,10 +188,16 @@
                     }
                     else
                     {
-                    System.Console.WriteLine("Hello and welcome to the quiz game!");
-                    var random = new Random();
-                    int index = random.Next(myquiz.Count);
-                    myquiz[index].CorrectAnswer();
+                        while (myquiz.Count > 0)
+                        {
+                        System.Console.WriteLine("Hello and welcome to the quiz game!");
+                        var random = new Random();
+                        int index = random.Next(myquiz.Count);
+                        myquiz[index].CorrectAnswer();
+                        myquiz.RemoveAt(index);
+                        }
+                        System.Console.WriteLine("There are no more questions to answer!");
+                        
                     }
                     break;
                     
