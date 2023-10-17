@@ -117,9 +117,11 @@
                         break;
                         
                     case 7:
+                       
                        prints.PrintQuestions(myquiz);
                         break;
                     case 8:
+                       
                        for (int i = 0; i < myquiz.Count; i++)
                         {
                 
@@ -137,6 +139,7 @@
                         }
                         break;
                     case 9:   
+                        System.Console.WriteLine("Exiting admin menu!");
                         flag = false;
                         break;
                     
