@@ -29,7 +29,7 @@
                     case 1:
                        System.Console.WriteLine("State the year question!");
                        string yeartext = "" + Console.ReadLine();
-                       System.Console.WriteLine("What is the correct asnwer?");
+                       System.Console.WriteLine("What is the correct answer?");
                        int.TryParse(Console.ReadLine(),out int years);
                        System.Console.WriteLine("How many points is the question worth?");
                        int.TryParse(Console.ReadLine(),out int points);
@@ -42,7 +42,7 @@
                         // string Q
                         System.Console.WriteLine("State the text (string) question!");
                         string text = "" + Console.ReadLine();
-                        System.Console.WriteLine("What is the correct asnwer?");
+                        System.Console.WriteLine("What is the correct answer?");
                         string answer = Console.ReadLine() +"";
                         System.Console.WriteLine("How many points is the question worth?");
                         int.TryParse(Console.ReadLine(), out int points2);
@@ -54,7 +54,7 @@
                         // Numeric Q
                         System.Console.WriteLine("State the numerical question!");
                         text = "" + Console.ReadLine();
-                        System.Console.WriteLine("What is the correct asnwer?");
+                        System.Console.WriteLine("What is the correct answer?");
                         int.TryParse(Console.ReadLine(),out int number);
                         System.Console.WriteLine("How many points is the question worth?");
                         int.TryParse(Console.ReadLine(),out int points3);
@@ -66,7 +66,7 @@
                         // Bool
                         System.Console.WriteLine("State the true or false question!");
                         string booltext = "" + Console.ReadLine();
-                        System.Console.WriteLine("What is the correct asnwer, true or false?");
+                        System.Console.WriteLine("What is the correct answer, true or false?");
                         string boolanswer = Console.ReadLine() +"";
                         System.Console.WriteLine("How many points is the question worth?");
                         int.TryParse(Console.ReadLine(), out int points4);
@@ -78,7 +78,7 @@
                         // 1X2 Q
                         System.Console.WriteLine("State the [1X2] question!");
                         text = "" + Console.ReadLine();
-                        System.Console.WriteLine("What is the correct asnwer?");
+                        System.Console.WriteLine("What is the correct answer?");
                         answer = Console.ReadLine() +"";
                         System.Console.WriteLine("How many points is the question worth?");
                         int.TryParse(Console.ReadLine(), out int points5);
