@@ -6,7 +6,7 @@ public class Stringanswer : Quiz
     public string correct {set; get;}
     public string thequerytext;
 
-    public Stringanswer(string correct, string thequerytext, int points) : base(thequerytext, points) //add points
+    public Stringanswer(string correct, string thequerytext, int points) : base(thequerytext, points) 
     {
         this.correct =correct;
     }
@@ -14,8 +14,7 @@ public class Stringanswer : Quiz
 
     public override void CorrectAnswer()
     {
-        //System.Console.WriteLine(Thequerytext);
-        //System.Console.WriteLine("What is your answer");
+        
         base.CorrectAnswer();
         string answer = "" + Console.ReadLine();
         if (answer == correct)
@@ -50,8 +49,7 @@ class NumericQuestion : Quiz
 
     public override void CorrectAnswer()
     {
-        // System.Console.WriteLine(Thequerytext);
-        // System.Console.WriteLine("What is your answer");
+        
         base.CorrectAnswer();
         int.TryParse(Console.ReadLine(),out int answer);
         if (answer == number)

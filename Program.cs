@@ -20,14 +20,16 @@
                 System.Console.WriteLine("| [5] Add 1X2 question         |");
                 System.Console.WriteLine("| [6] Add multiple choice      |");
                 System.Console.WriteLine("| [7] Print out questions      |");
+                System.Console.WriteLine("| [8] Remove question          |");
                 System.Console.WriteLine("| [9] Quit                     |");
                 System.Console.WriteLine("********************************");
-                System.Console.Write("Val: ");
+                System.Console.Write("Choice: ");
                 int menu = int.Parse("" + Console.ReadLine());
 
                 switch (menu)
                 {
                     case 1:
+                       
                        System.Console.WriteLine("State the year question!");
                        string yeartext = "" + Console.ReadLine();
                        System.Console.WriteLine("What is the correct answer?");
@@ -40,7 +42,7 @@
 
                        break;
                     case 2:
-                        // string Q
+                        
                         System.Console.WriteLine("State the text (string) question!");
                         string text = "" + Console.ReadLine();
                         System.Console.WriteLine("What is the correct answer?");
@@ -52,7 +54,7 @@
                         System.Console.WriteLine("Text question added!");
                         break;
                     case 3:
-                        // Numeric Q
+                        
                         System.Console.WriteLine("State the numerical question!");
                         text = "" + Console.ReadLine();
                         System.Console.WriteLine("What is the correct answer?");
@@ -64,7 +66,7 @@
                         System.Console.WriteLine("Numeric question added!");
                         break;
                     case 4:
-                        // Bool
+                        
                         System.Console.WriteLine("State the true or false question!");
                         string booltext = "" + Console.ReadLine();
                         System.Console.WriteLine("What is the correct answer, true or false?");
@@ -76,7 +78,7 @@
                         System.Console.WriteLine("true or false question added!");
                         break;
                     case 5:
-                        // 1X2 Q
+                        
                         System.Console.WriteLine("State the [1X2] question!");
                         text = "" + Console.ReadLine();
                         System.Console.WriteLine("What is the correct answer?");
@@ -88,7 +90,7 @@
                         System.Console.WriteLine("1X2 question added!");
                         break;
                     case 6:
-                        // Multiple Q
+                        
                         System.Console.WriteLine("State the multiple-choice question!");
                         string multiChoiceText = "" + Console.ReadLine();
                         System.Console.WriteLine("How many points is the question worth?");
@@ -116,15 +118,30 @@
                         
                     case 7:
                        prints.PrintQuestions(myquiz);
-                    break;
+                        break;
                     case 8:
-                       
+                       for (int i = 0; i < myquiz.Count; i++)
+                        {
+                
+                        Console.WriteLine($"{i + 1}. {myquiz[i].Thequerytext}");
+                        }
+                        System.Console.WriteLine("Enter the question number that you want to remove!");
+                        if (int.TryParse(Console.ReadLine(), out int questionNumber) && questionNumber >= 1 && questionNumber <= myquiz.Count)
+                        {
+                            myquiz.RemoveAt(questionNumber - 1);
+                            Console.WriteLine("Question removed.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid question number.");
+                        }
                         break;
                     case 9:   
                         flag = false;
                         break;
                     
                     default:
+                        System.Console.WriteLine("Please enter a valid option!");
                         break;
                 }
              
