@@ -164,9 +164,9 @@
             bool isRunning = true;
             while (isRunning)
             {
-            System.Console.WriteLine("<[1] Admin menu>");
-            System.Console.WriteLine("<[2] Play quiz> ");
-            System.Console.WriteLine("<[9] Quit>      ");
+            System.Console.WriteLine("< [1] Admin menu >");
+            System.Console.WriteLine("< [2] Play quiz  >");
+            System.Console.WriteLine("< [9] Quit       >");
             System.Console.Write("Choice: ");
             int choice = int.Parse("" + Console.ReadLine());
 
@@ -185,7 +185,7 @@
 
                     break;
 
-                case 3:
+                case 9:
                     System.Console.WriteLine("Have a nice day!");
                     isRunning = false;
                     break;
