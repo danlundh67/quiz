@@ -6,21 +6,22 @@
 
     class Program
     {
-
+        static public Printing prints = new Printing();
         static public List<Quiz> myquiz = new List<Quiz>();
         static public void queryfill()
         {   bool flag = true;
             while (flag)
             {
-                System.Console.WriteLine("--------------------------------");
+                System.Console.WriteLine("********************************");
                 System.Console.WriteLine("| [1] Add year question        |");
                 System.Console.WriteLine("| [2] Add text questtion       |");
                 System.Console.WriteLine("| [3] Add numeric question     |");
-                System.Console.WriteLine("| [4] Add Trye/False question  |");
+                System.Console.WriteLine("| [4] Add True/False question  |");
                 System.Console.WriteLine("| [5] Add 1X2 question         |");
                 System.Console.WriteLine("| [6] Add multiple choice      |");
-                System.Console.WriteLine("| [9] quit                     |");
-                System.Console.WriteLine("--------------------------------");
+                System.Console.WriteLine("| [7] Print out questions      |");
+                System.Console.WriteLine("| [9] Quit                     |");
+                System.Console.WriteLine("********************************");
                 System.Console.Write("Val: ");
                 int menu = int.Parse("" + Console.ReadLine());
 
@@ -88,9 +89,33 @@
                         break;
                     case 6:
                         // Multiple Q
+                        System.Console.WriteLine("State the multiple-choice question!");
+                        string multiChoiceText = "" + Console.ReadLine();
+                        System.Console.WriteLine("How many points is the question worth?");
+                        int.TryParse(Console.ReadLine(), out int points6);
+                        
+                        List<string> choices = new List<string>();
+
+                        System.Console.WriteLine("Enter the choices for the question (enter 'done' when finished):");
+                        string choice = "";
+                        while (true)
+                        {
+                            choice = ""+ Console.ReadLine();
+                            if (choice.ToLower() == "done")
+                                break;
+                            choices.Add(choice);
+                        }
+                        System.Console.WriteLine("Enter the correct choice:");
+                        string correctChoice = ""+ Console.ReadLine();
+
+                        MultipleChoises multiChoiceQuestion = new MultipleChoises(multiChoiceText, points6, choices);
+                        multiChoiceQuestion.SetCorrectChoice(correctChoice);
+                        myquiz.Add(multiChoiceQuestion);
+                        System.Console.WriteLine("Multiple-choice question added!");
                         break;
+                        
                     case 7:
-                       
+                       prints.PrintQuestions(myquiz);
                     break;
                     case 8:
                        
@@ -102,11 +127,7 @@
                     default:
                         break;
                 }
-            // välja frågetyp
-                // läs in frågetext 
-                // läs in poängen
-                // läs in rätt svar
-                // skapa objekt av frågetypen 
+             
 
             
             }

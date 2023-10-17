@@ -9,8 +9,9 @@ public class YearQuestion : Quiz
     }
     public override void CorrectAnswer()
     {
-        System.Console.WriteLine(Thequerytext);
-        System.Console.WriteLine("What is your answer");
+        //System.Console.WriteLine(Thequerytext);
+        //System.Console.WriteLine("What is your answer");
+        base.CorrectAnswer();
         int.TryParse(Console.ReadLine(),out int answer);
         if (answer == year)
         {
