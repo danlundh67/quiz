@@ -1,4 +1,4 @@
-using System.Text.Json;
+
 using System.IO;
 
 class FileHandling
@@ -34,7 +34,10 @@ class FileHandling
                 }
                 else if (item is MultipleChoises child6)
                 {
-                     sw.WriteLine($"MultipleChoises;{child6.Thequerytext};{child6.Points};{child6.Correctchoice}");
+                     string choicesString = string.Join(";", child6.Choices);
+                     sw.WriteLine($"MultipleChoises;{child6.Thequerytext};{child6.Points};{child6.Correctchoice};{choicesString}");
+
+                    
                 }
 
             }
