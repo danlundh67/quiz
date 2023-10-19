@@ -152,7 +152,7 @@ namespace quizzen
                         List<Quiz> predef = new List<Quiz>();
                         Console.WriteLine("Enter filename:");
                         string fileName= Console.ReadLine() +"";
-                        predef = FileHandling.ReadFromFile(fileName);
+                        predef = Filehandling2.ReadFromFile(fileName);
                         foreach (Quiz a in predef)
                         {
                             myquiz.Add(a);

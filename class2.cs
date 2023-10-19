@@ -74,8 +74,8 @@ public override void CorrectAnswer()
 }
 public class MultipleChoises : Quiz
 {
-    List<string> Choices = new List<string>();
-    public string Correctchoice;
+    public List<string> Choices = new List<string>();
+    public string Correctchoice { get; private set; }
 
     public MultipleChoises (string thequerytext, int points, List<string> choices) : base(thequerytext, points)
     {
