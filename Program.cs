@@ -24,6 +24,10 @@ namespace quizzen
                 System.Console.WriteLine("| [7] Print out questions      |");
                 System.Console.WriteLine("| [8] Remove question          |");
                 System.Console.WriteLine("| [9] Quit                     |");
+                System.Console.WriteLine("|                              |");
+                System.Console.WriteLine("|                              |");
+                System.Console.WriteLine("| [10] Load predefined         |");
+                System.Console.WriteLine("| [11] Save to predefined      |");
                 System.Console.WriteLine("********************************");
                 System.Console.Write("Choice: ");
                 int menu = int.Parse("" + Console.ReadLine());
@@ -144,7 +148,23 @@ namespace quizzen
                         System.Console.WriteLine("Exiting admin menu!");
                         flag = false;
                         return;
-                    
+                    case 10:
+                        List<Quiz> predef = new List<Quiz>();
+                        Console.WriteLine("Enter filename:");
+                        string fileName= Console.ReadLine() +"";
+                        predef = FileHandling.ReadFromFile(fileName);
+                        foreach (Quiz a in predef)
+                        {
+                            myquiz.Add(a);
+                        }
+                        Console.WriteLine("Predefined questions loaded");
+                        break;
+                    case 11:
+                            Console.WriteLine("State filename (for save): ");
+                            fileName= Console.ReadLine() + "";
+                            FileHandling.SaveToFile(myquiz, fileName);
+                            Console.WriteLine("Quiestions saved");
+                        break;
                     default:
                         System.Console.WriteLine("Please enter a valid option!");
                         break;
